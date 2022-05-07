@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "f17ec365-e7a1-43ed-b3e4-c876a0b30910",
+		"name": "Money Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Check Account Balance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"accountNumber\": \"10000\"\n}\n\n"
+				},
+				"url": {
+					"raw": "localhost:8085/api/v1/account/balance",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transactions for Account",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"accountNumber\": \"10001\"\n}\n\n"
+				},
+				"url": {
+					"raw": "localhost:8085/api/v1/account/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make Transfer Between Accounts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"sourceAccountNumber\": \"10001\",\n    \"destinationAccountNumber\" : \"10000\",\n\t\"amount\": 600.0,\n\t\"reference\": \"My ref\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8085/api/v1/transfer/",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"transfer",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make Deposit to Account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"accountNumber\": \"10001\",\n\t\"amount\": 600.0,\n\t\"reference\": \"My ref\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8085/api/v1/account-deposit/",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"account-deposit",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make Withdrawal From Account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"accountNumber\": \"10000\",\n\t\"amount\": 600.0,\n\t\"reference\": \"My ref\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8085/api/v1/account-withdrawal/",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"account-withdrawal",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
